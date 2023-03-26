@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login website</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+  
+    <!-- Configura Firebase -->
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAnImCR7v25PM9le7CkNRm4D8laNX-rcIw",
+        authDomain: "loginregisterstaticwebsite.firebaseapp.com",
+        projectId: "loginregisterstaticwebsite",
+        storageBucket: "loginregisterstaticwebsite.appspot.com",
+        messagingSenderId: "153604687778",
+        appId: "1:153604687778:web:eb179030aa07d4b5c354fb",
+        measurementId: "G-HEVWL4390R"
+      };
+      // Inicializa Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+<body>
+    <div>
+        <div>
+        <center>
+        <img src="./images/R.png" width="150px">
+        <center>
+        
+            <h1 id="h2">Inicio de sesión</h1>
+            <form id="LoginForm">
+                <label id="label">Correo electronico:</label><br>
+                <input id="entrada"
+                type="email"
+                placeholder="email@email.com"
+                name="email"
+                required><br><br>
+
+                <label id="label">Contraseña:</label><br>
+                <input id="entrada"
+                type="password"
+                placeholder="••••••••••••••••••••••"
+                name="password"
+                required
+                ><br><br>
+
+                <button type="submit" id="boton1">Ingresar</button> <button id="boton2">Olvidé mi contraseña</button><br><br>
+                <button onclick="window.open('./REGISTER HTML/index.html', '_self')" id="boton3">Registrarse</button>
+            </form>
+        </div>
+    </div>
+    <script>
+	  const loginForm = document.querySelector('#LoginForm');
+	  loginForm.addEventListener('submit', (e) => {
+	    e.preventDefault();
+	    const email = loginForm['email'].value;
+	    const password = loginForm['password'].value;
+	    firebase.auth().signInWithEmailAndPassword(email, password)
+	      .then((userCredential) => {
+	        // Inicio de sesión exitoso, redirige al usuario a la página de inicio
+	        window.open('./Session/index.html', '_self');
+	      })
+	      .catch((error) => {
+	        alert('Usuario no registrado');
+	      });
+	  });
+	</script>
+</body>
+</html>

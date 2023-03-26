@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./index.css">
+        <title>Register HTML</title>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+      
+        <!-- Configura Firebase -->
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyAnImCR7v25PM9le7CkNRm4D8laNX-rcIw",
+            authDomain: "loginregisterstaticwebsite.firebaseapp.com",
+            projectId: "loginregisterstaticwebsite",
+            storageBucket: "loginregisterstaticwebsite.appspot.com",
+            messagingSenderId: "153604687778",
+            appId: "1:153604687778:web:eb179030aa07d4b5c354fb",
+            measurementId: "G-HEVWL4390R"
+          };
+          // Inicializa Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
+    </head>
+    <body>
+        <div>
+            <div>
+            <center>
+            <img src="./images/R.png" width="150px">
+            <center>
+            
+                <h1 id="h2">Registro usuario</h1>
+                <form id="RegisterForm">
+                    <label id="label">Nombre de usuario</label><br>
+                    <input type="name" 
+                    id="entrada"
+                    placeholder="Usuario"
+                    name="name"
+                    required>
+                    <br> <br>
+                    
+                    <label id="label">Correo electronico:</label><br>
+                    <input type="email" 
+                    id="entrada"
+                    placeholder="MariaFernanda@gmail.com"
+                    name="email"
+                    required>
+                    <br><br>
+
+                    <label id="label">Contraseña:</label><br>
+                    <input id="entrada"
+                    type="password"
+                    placeholder="••••••••••••••••••••••"
+                    name="password"
+                    required>
+                    <br><br>
+
+                    <button type="submit" id="boton3">Registrar usuario</button>
+                    <button onclick="window.open('../index.html', '_self')" id="boton3">Iniciar sesion</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+                  // Maneja el registro
+            const registroForm = document.querySelector('#RegisterForm');
+            registroForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = registroForm['email'].value;
+                const password = registroForm['password'].value;
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Registro exitoso, redirige al usuario a la página de inicio
+                    window.location.href = "../index.html";
+                })
+                .catch((error) => {
+                    alert('No pudimos registrarlo en la base de datos, lo siento. Intente de nuevo mas tarde');
+                });
+            });
+        </script>
+
+    </body>
+</html>
