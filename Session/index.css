@@ -63,3 +63,92 @@ div div{
     -ms-border-radius: 200px;
     -o-border-radius: 200px;
 }
+
+/* Estilos para pantallas grandes */
+body{
+    background-image: url(./images/fondo1.jpg);
+    width: auto;
+    margin: 7px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+div div{
+    background: linear-gradient(rgba(194, 45, 75, 0.896) 0%, rgba(48, 48, 174, 0.805) 100%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, rgba(194, 45, 75, 0.896), rgba(48, 48, 174, 0.805), rgba(194, 45, 75, 0.896)) 1;
+    text-align: left;
+    border-radius: 1px;
+    padding: 40px;
+    padding-left: 50px;
+    margin: 33px 183px 7px 183px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#label{
+    font-size: 25px;
+    text-align: justify;
+    color: white;
+}
+
+#h2{
+    display: inline-block;
+    vertical-align: top;
+}
+#h3{
+    text-align: center;
+}
+
+#entrada{
+    color: black;
+    border-radius: 200px;
+    border-style: none;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    -ms-border-radius: 200px;
+    -o-border-radius: 200px;
+}
+
+#boton3{
+    background: -webkit-linear-gradient(270deg, rgba(194, 45, 75, 0.896) 0%, rgba(48, 48, 174, 0.805) 100%);;
+    color: white;
+    border-radius: 200px;
+    border-style: none;
+    width: 220px;
+    height: 30px;
+    font-size: 10px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    -ms-border-radius: 200px;
+    -o-border-radius: 200px;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    div div {
+        padding: 20px;
+        padding-left: 30px;
+        margin: 20px;
+    }
+    #h2 {
+        display: block;
+        text-align: center;
+    }
+    #entrada, #boton3 {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
